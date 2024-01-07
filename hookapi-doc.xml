@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+區塊說明：
+user32.MessageBoxA
+我們這例子 Hook 的對像
+
+myMessageBox
+Hook user32.MessageBoxA 後，所有行程內呼叫 MessageBoxA 都會先跑到這個我們自定義的函式。在這裡就是處理我們想作的事囉。
+
+(以下三個區塊都是隱藏的，負責處理/連結 HOOK API 流程)
+HookBegin
+在將控制權轉給 myMessageBox 前作的一些動作.
+作了以下的事
+1. 更改原 user32.MessageBoxA return address, 改指到 HookEnd
+2. 將原本的 user32.MessageBoxA return address 填入到 HookEnd,
+    讓 HookEnd 知道返回位址
+3. 遞增此 hooked api 計數器 (給 UnhookAPI 使用, 判斷可不可以 unhook)
+
+HookEnd
+在 myMessageBox 結束後作的一些動作
+作了以下的事
+1.壓入原本的 return address (由 HookBegin 填入的)
+2.遞減 hooked api 計數器
+
+OriginalAPI
+讓 myMessageBox 能呼叫到原本的 user32.MessageBoxA
+內容就是原 user32.MessageBoxA 前幾個 bytes 加上一個 jmp
+
+流程說明：
+在尚未 Hook user32.MessageBoxA 之前, 流程是進入
+user32.MessageBoxA, 然後離開
+
+Hook 之後
+1. 接到 MessageBox 請求，進入 user32.MessageBoxA
+2. 跳轉到 HookBegin, 這裡作初始化動作
+3. 將控制權轉給 myMessageBox
+4. myMessageBox 呼叫原本的 API, 所以進入 OriginalAPI
+5. 轉至 user32.MessageBoxA
+6. 因為是由 myMessageBox 呼叫的，所以結束後會跳回 myMessageBox
+7. myMessageBox 結束後，進入 HookEnd 作收尾的動作
+8. 回家
+
+HookAPI 其實就是玩連連看的遊戲..
+只要注意到 stack 平衡和不要改變原暫存器的值，愛怎麼連就怎麼連..
+所以應該不只一種作法.. 也許會有比我更好的作法，歡迎討論喔.
+
+</root>

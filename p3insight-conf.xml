@@ -1,0 +1,22 @@
+<xml version="1.0" encoding="UTF-8"?>
+<p3insight>
+	<mem-viewer>
+		<structures>
+			<struct name="City structure" anchor-start="offset" anchor-end="offset">
+				<item name="goods_store" off="4" size="4*8" type="cardinal" array="true" count="20" special color="" highlight="1/2/3">
+					<comment></comment>
+				</item>
+				
+				<item name="Produce factor of Whale" off="716" size="2*8" type="word" />
+				<item name="Satisfy of R1" off="776" size="2*8" type="smallint" />
+				
+				<notes>
+					<note off="x"></note>
+				</notes>
+			</struct>
+			
+			<struct name="Business office">
+			</struct>
+		<structures>
+	</mem-viewer>
+</p3insight>

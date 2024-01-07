@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{7B3E4501-BFF1-4B70-A2BE-EA8BB3D6E3FC}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="p3ed.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="p3insight.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Painter.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="p3ed">
+        <MSBuild Projects="p3ed.dproj"/>
+    </Target>
+    <Target Name="p3ed:Clean">
+        <MSBuild Projects="p3ed.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="p3ed:Make">
+        <MSBuild Projects="p3ed.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="p3insight">
+        <MSBuild Projects="p3insight.dproj"/>
+    </Target>
+    <Target Name="p3insight:Clean">
+        <MSBuild Projects="p3insight.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="p3insight:Make">
+        <MSBuild Projects="p3insight.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Painter">
+        <MSBuild Projects="Painter.dproj"/>
+    </Target>
+    <Target Name="Painter:Clean">
+        <MSBuild Projects="Painter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Painter:Make">
+        <MSBuild Projects="Painter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="p3ed;p3insight;Painter"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="p3ed:Clean;p3insight:Clean;Painter:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="p3ed:Make;p3insight:Make;Painter:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

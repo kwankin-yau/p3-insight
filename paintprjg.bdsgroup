@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">Default.Personality</Option>
+			<Option Name="ProjectType"></Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{82BF8BC4-9B0B-4FB5-8B9F-0FFFD6E30FE2}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Default.Personality>  <Projects>
+      <Projects Name="Transform_Ex.exe">C:\MyProjectGroup\Common\Free\graphics32-1-8-3\Examples\Vcl\Transformation\Transform_Ex\Transform_Ex.bdsproj</Projects>
+      <Projects Name="Painter.exe">Painter.bdsproj</Projects>
+      <Projects Name="ImgView_Layers_Ex.exe">C:\MyProjectGroup\Common\Free\graphics32-1-8-3\Examples\Vcl\Layers\ImgView_Layers_Ex\ImgView_Layers_Ex.bdsproj</Projects>
+      <Projects Name="PolyLines.exe">C:\MyProjectGroup\Common\Free\graphics32-1-8-3\GR32LinesSample\PolyLines.bdsproj</Projects>
+      <Projects Name="Targets">Transform_Ex.exe Painter.exe ImgView_Layers_Ex.exe PolyLines.exe</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+</BorlandProject>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<PersonalityInfo>
+		<Option>
+			<Option Name="Personality">Default.Personality</Option>
+			<Option Name="ProjectType"></Option>
+			<Option Name="Version">1.0</Option>
+			<Option Name="GUID">{00B8E693-ABCC-4E76-A276-7D2E2922A6C5}</Option>
+		</Option>
+	</PersonalityInfo>
+	<Default.Personality>  <Projects>
+      <Projects Name="p3ed.dll">p3ed.bdsproj</Projects>
+      <Projects Name="p3insight.dll">p3insight.bdsproj</Projects>
+      <Projects Name="Painter.exe">Painter.bdsproj</Projects>
+      <Projects Name="Targets">p3ed.dll p3insight.dll Painter.exe</Projects>
+    </Projects>
+    <Dependencies/>
+  </Default.Personality>
+	<StarTeamAssociation></StarTeamAssociation>
+	<StarTeamNonRelativeFiles></StarTeamNonRelativeFiles>
+</BorlandProject>
