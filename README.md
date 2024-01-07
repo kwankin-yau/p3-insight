@@ -24,25 +24,7 @@ P3 Insignt 是鄙人于2009年用Delphi 7游戏大航海家3(Patrician III)中�
 # By alphax, 2009-03-16
 # Contact: alphax@vip.163.com
 
-P3EDRUNNER_TARGET=P3.EXE
-LOAD_DLL=P3ED.DLL
-
-P3ED_HOUSE_CAPACITY1=
-# 设置富豪房子的容量，空着表示不修改，修改后要开新档才能体现，下同，默认=80
-
-P3ED_HOUSE_CAPACITY2=
-# 设置富人房子容量
-
-P3ED_HOUSE_CAPACITY3=
-# 设置穷人房子容量
-
-P3ED_SHIP_CAPACITY_1_1=
-# 设置1级小史船只容量，单位包，空着表示不修改，不能超过255
-
-P3ED_SHIP_CAPACITY_1_2=
-# 设置2级小史船只容量
-
-P3ED_HOTKEY=ctrl+alt+f
+P3ED_HOTKEY=ctrl+alt+f1
 # 呼出修改器的热键
 # 热键，可识别的按键
 #    ctrl, alt, win, shift, scroll_lock, break,
@@ -53,13 +35,13 @@ P3ED_SHIP_NAME_PREFIX=alphax
 
 
 P3ED_CAPTAIN=$02
-# 船长代码，修改器的默认值=$02
+# 船长代码，编辑器的默认值=$02
 
 P3ED_MAX_LOAD=198000000
-# 最大载重(桶x200, 包x2000)，修改器默认值=198000000，即99000包
+# 最大载重(桶x200, 包x2000)，编辑器默认值=198000000，即99000包
 
-P3ED_MAX_POINT=1000000
-# 最大耐久，默认值=1000000
+P3ED_MAX_POINT=100000
+# 最大耐久，默认值=100000
 
 P3ED_GOODS_QTY=4500
 # 快速设置货物量时使用的数量，单位包，默认=4500
@@ -68,14 +50,5 @@ P3ED_ADDR_START=
 # 默认的搜索起始地址，注意16进制要用'$'符号开头，如$10000
 
 P3ED_ADDR_END=
-# 默认的搜索结束地址，注意16进制要用'$'符号开头，如$7FFEFFFF，
-# 当P3ED_ADDR_START或P3ED_ADDR_END设置了后，编辑器的预设地址将变成你指定的值。空着表示使用操作系统的值。
-
-P3ED_CITY_CODE_FILE=p3citycode-std24.txt
-# 城市代码文件，"p3citycode-std24.txt"适用于标准地图，如果这里设成空白，修改器就使用16进制数表示。
-
-# 这些变量都是可选的，可以单独设置或不设置，不设置等于设置默认值，设置默认值等于不设置，设置时不能小于游戏的最小值，也不能过大，
-# 否则会溢出，如果设置了最大载重，也要考虑与快速设置货物量的值是否协调，否则使用“全部xxxx包”时就超重了，
-# 结果是只能卖掉一些货物才能出港。P3ED_MAX_LOAD,P3ED_MAX_POINT还被用作船只数据的判断条件，如果有船数据的
-# 值超过这些值，搜索时就不会被列出来。
+# 默认的搜索结束地址，注意16进制要用'$'符号开头，如$7FFEFFFF，当P3ED_ADDR_START或P3ED_ADDR_END设置了后，编辑器的预设地址将变成你指定的值。空着表示使用操作系统的值。
 ```
